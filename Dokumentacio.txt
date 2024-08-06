@@ -1,0 +1,55 @@
+Smart Home Management System Dokumentáció:
+
+Osztályok:
+1. SmartDevice Osztály
+Leírás: Ez az ősosztály minden okoseszközhöz.
+Attribútumok:
+- device_id (str): Az eszköz egyedi azonosítója.
+- status (bool): Az eszköz be/ki állapotát reprezentálja.
+1.1 toggle_status Metódus
+Leírás: Be- vagy kikapcsolja az eszközt.
+2. SmartLight Osztály (Az SmartDevice Leszármazottja)
+Leírás: Egy okos lámpát reprezentál.
+Attribútumok:
+- brightness (int): A lámpa fényerejének szintje (0-100).
+2.1 set_brightness Metódus
+Leírás: Beállítja az okos lámpa fényerejét.
+3. SmartThermostat Osztály (Az SmartDevice Leszármazottja)
+Leírás: Egy okos boiler eszközt reprezentál.
+Attribútumok:
+- temperature (int): A boiler hőmérsékletbeállítását reprezentálja.
+3.1 set_brightness Metódus
+Leírás: Beállítja az okos boiler hőmérsékletét.
+4. AutomationSystem Osztály
+Leírás: Kezeli a csatlakoztatott okoseszközök gyűjteményét.
+Attribútumok:
+- devices (list): Lista, amely tartalmazza a csatlakoztatott okoseszközök példányait.
+4.1 add_device Metódus
+Leírás: Hozzáad egy okoseszközt a rendszerhez.
+5. Dashboard Osztály
+Leírás: Grafikus felhasználói felület (GUI) az okoseszközök monitorozásához és irányításához.
+Attribútumok:
+- root (Tk): A GUI gyökérablaka.
+- system (AutomationSystem): Az okoseszközöket kezelő automatizációs rendszer.
+- labels (list): Lista az eszközinformációkhoz tartozó címkékkel.
+- automation_on (bool): Az automatizációs rendszer be/ki állapotát reprezentálja.
+5.1 toggle_button_name Metódus
+Leírás: Be- vagy kikapcsolja az automatizációs rendszer be/ki állapotát és frissíti a gomb szövegét.
+5.2 toggle_on_off Metódus
+Leírás: Be- vagy kikapcsolja egy okoseszköz be/ki állapotát, és frissíti a GUI-t.
+5.3 update_values Metódus
+Leírás: Frissíti a GUI-n megjelenő információkat.
+5.4 create_device_controls Metódus
+Leírás: Létrehozza a GUI vezérlőket minden csatlakoztatott okoseszközhöz.
+5.5 __create_temperature_controls Metódus
+Leírás: Létrehozza a GUI vezérlőket egy okos termostáthoz.
+5.6 __create_light_controls Metódus
+Leírás: Létrehozza a GUI vezérlőket egy okos lámpához.
+5.7 __dashb_set_brightness Metódus
+Leírás: Beállítja az eszköz fényerejét/hőmérsékletét, és frissíti a GUI-t.
+
+Hogyan használd a GUI-t:
+A GUI ablakban megjelenik a csatlakoztatott okoseszközök listája.
+Minden eszköznek van egy címkéje, amely jelzi a státuszát és az releváns információkat.
+Használd a "Be/Ki" gombokat az eszközök ki- vagy bekapcsolásához.
+A "Random Automatizálás" gombbal engedélyezheted vagy letilthatod az automatizációs rendszert. - Nincs kész
